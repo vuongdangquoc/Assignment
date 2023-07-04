@@ -103,7 +103,7 @@ public class BrandList extends ArrayList<Brand>{
     }
 
     public Brand getUserChoice() {
-        Menu menu = new Menu();
+        Menu<> menu = new Menu<>();
         return (Brand) menu.ref_getChoice(this);
     }
 
