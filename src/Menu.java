@@ -1,16 +1,15 @@
 package Classes;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Menu {
+public class Menu<E> {
     private Scanner scanner;
 
     public Menu() {
         scanner = new Scanner(System.in);
     }
 
-    public int int_getChoice(ArrayList<Brand> options) {
+    public int int_getChoice(ArrayList<E> options) {
         int response;
         int N = options.size();
 
@@ -24,10 +23,10 @@ public class Menu {
         return response;
     }
 
-    public Brand ref_getChoice(ArrayList<Brand> options) {
+    public E ref_getChoice(ArrayList<E> options) {
         int response;
         int N = options.size();
-        Brand choice;
+        E choice;
 
         do {
             response = int_getChoice(options);
@@ -37,4 +36,3 @@ public class Menu {
         return choice;
     }
 }
-
