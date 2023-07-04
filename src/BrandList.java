@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class BrandList {
+public class BrandList extends ArrayList<Brand>{
 
     private ArrayList<Brand> brands;
 
@@ -104,7 +104,7 @@ public class BrandList {
 
     public Brand getUserChoice() {
         Menu menu = new Menu();
-        return (Brand) menu.ref_getChoice(this.brands);
+        return (Brand) menu.ref_getChoice(this);
     }
 
     public void updateBrand() {
