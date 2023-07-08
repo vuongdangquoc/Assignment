@@ -1,6 +1,4 @@
 
-package Classes;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -8,46 +6,43 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class BrandList extends ArrayList<Brand>{
 
-    private ArrayList<Brand> brands;
-
     public BrandList() {
-        brands = new ArrayList<>();
+        super();
     }
 
     public void addBrand(String brandID, String brandName, String soundBrand, double price) {
         // Kiểm tra brandID không tồn tại trong danh sách
-        for (Brand brand : brands) {
+        for (Brand brand : this) {
             if (brand.getBrandID().equals(brandID)) {
                 System.out.println("Brand ID already exists.");
-                return;
+                
             }
         }
 
         // Kiểm tra brandName không trống
         if (brandName.isEmpty()) {
             System.out.println("Brand name cannot be blank.");
-            return;
+            
         }
 
         // Kiểm tra soundBrand không trống
         if (soundBrand.isEmpty()) {
             System.out.println("Sound brand cannot be blank.");
-            return;
+            
         }
 
         // Kiểm tra price > 0
         if (price <= 0) {
             System.out.println("Price must be greater than 0.");
-            return;
+           
         }
 
         Brand brand = new Brand(brandID, brandName, soundBrand, price);
-        brands.add(brand);
+        this.add(brand);
     }
 
     public boolean loadFromFile(String filename) {
@@ -80,7 +75,7 @@ public class BrandList extends ArrayList<Brand>{
 
     public boolean saveToFile(String filename) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-            for (Brand brand : brands) {
+            for (Brand brand : this) {
                 writer.write(brand.toString());
                 writer.newLine();
             }
@@ -93,9 +88,9 @@ public class BrandList extends ArrayList<Brand>{
     }
 
     public int searchID(String bID) {
-        int N = brands.size();
+        int N = this.size();
         for (int i = 0; i < N; i++) {
-            if (brands.get(i).getBrandID().equals(bID)) {
+            if (this.get(i).getBrandID().equals(bID)) {
                 return i;
             }
         }
@@ -103,7 +98,7 @@ public class BrandList extends ArrayList<Brand>{
     }
 
     public Brand getUserChoice() {
-        Menu<> menu = new Menu<>();
+        Menu menu = new Menu<>();
         return (Brand) menu.ref_getChoice(this);
     }
 
@@ -128,7 +123,7 @@ public class BrandList extends ArrayList<Brand>{
 
             scanner.nextLine(); // Clear the newline character from the input buffer
 
-            Brand brand = brands.get(pos);
+            Brand brand = this.get(pos);
             brand.setBrandName(brandName);
             brand.setSoundBrand(soundBrand);
             brand.setPrice(price);
@@ -138,9 +133,9 @@ public class BrandList extends ArrayList<Brand>{
     }
     
         public void listBrands() {
-        int N = brands.size();
+        int N = this.size();
         for (int i = 0; i < N; i++) {
-            System.out.println(brands.get(i));
+            System.out.println(this.get(i));
         }
     }
 }

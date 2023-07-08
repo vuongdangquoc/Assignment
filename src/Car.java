@@ -1,5 +1,4 @@
 
-package Classes;
 
 public class Car implements Comparable<Car>{
     String carID;

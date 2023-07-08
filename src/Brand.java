@@ -1,7 +1,4 @@
 
-package Classes;
-
-
 public class Brand {
     String brandID;
     String brandName;
