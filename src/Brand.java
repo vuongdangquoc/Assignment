@@ -49,7 +49,7 @@ public class Brand {
 
     @Override
     public String toString() {
-        return  "< " +brandID+", "+ brandName+", " +soundBrand+": "+ price+">";
+        return "< " + brandID + ", " + brandName + ", " + soundBrand + ": " + price + ">";
     }
     
     

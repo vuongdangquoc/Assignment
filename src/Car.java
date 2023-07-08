@@ -1,6 +1,6 @@
 
+public class Car implements Comparable<Car> {
 
-public class Car implements Comparable<Car>{
     String carID;
     Brand brand;
     String color;
@@ -10,7 +10,7 @@ public class Car implements Comparable<Car>{
     public Car() {
     }
 
-    public Car(String carID, Brand brand, String color,String frameID, String engineID) {
+    public Car(String carID, Brand brand, String color, String frameID, String engineID) {
         this.carID = carID;
         this.brand = brand;
         this.color = color;
@@ -57,24 +57,14 @@ public class Car implements Comparable<Car>{
     public void setFrameID(String frameID) {
         this.frameID = frameID;
     }
-    
-    @Override
-    public String toString() {
-        return "carID=" + carID + ", brandID=" +brand.brandID + ", color=" + color + ", engineID=" + engineID+", frameID="+frameID;
-    }
-    
-    
+
     @Override
     public int compareTo(Car c) {
         int d = this.brand.brandName.compareTo(c.brand.brandName);
-        if(d!=0)
+        if (d != 0) {
             return d;
+        }
         return this.carID.compareTo(c.carID);
     }
-    
-    public String screenString(){
-          return "brand= "+brand+"\n"+"carID= "+carID+"color= "+color+"frameID= "+frameID+"engineID= "+engineID;
-    }
-    
-}
 
+}

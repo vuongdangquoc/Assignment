@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BrandList extends ArrayList<Brand>{
+public class BrandList extends ArrayList<Brand> {
 
     public BrandList() {
         super();
@@ -19,26 +19,26 @@ public class BrandList extends ArrayList<Brand>{
         for (Brand brand : this) {
             if (brand.getBrandID().equals(brandID)) {
                 System.out.println("Brand ID already exists.");
-                
+
             }
         }
 
         // Kiểm tra brandName không trống
         if (brandName.isEmpty()) {
             System.out.println("Brand name cannot be blank.");
-            
+
         }
 
         // Kiểm tra soundBrand không trống
         if (soundBrand.isEmpty()) {
             System.out.println("Sound brand cannot be blank.");
-            
+
         }
 
         // Kiểm tra price > 0
         if (price <= 0) {
             System.out.println("Price must be greater than 0.");
-           
+
         }
 
         Brand brand = new Brand(brandID, brandName, soundBrand, price);
@@ -131,12 +131,11 @@ public class BrandList extends ArrayList<Brand>{
             System.out.println("Brand updated successfully.");
         }
     }
-    
-        public void listBrands() {
+
+    public void listBrands() {
         int N = this.size();
         for (int i = 0; i < N; i++) {
             System.out.println(this.get(i));
         }
     }
 }
-
