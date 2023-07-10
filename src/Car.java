@@ -66,13 +66,13 @@ public class Car implements Comparable<Car> {
         }
         return this.carID.compareTo(c.carID);
     }
-    
-    public String toString(){
-        return carID + ", "+ brand.brandID+ ", "+ color+ ", "+ frameID+", "+engineID;
+
+    public String toString() {
+        return carID + ", " + brand.brandID + ", " + color + ", " + frameID + ", " + engineID;
     }
-    
-    public String screenString(){
+
+    public String screenString() {
         return brand + "\n" + carID + "," + color + "," + frameID + "," + engineID;
     }
-    
+
 }
