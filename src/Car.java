@@ -68,11 +68,11 @@ public class Car implements Comparable<Car> {
     }
     
     public String toString(){
-        return "< "+ carID + ", "+ brand.brandID+ ", "+ color+ ", "+ frameID+", "+engineID+">";
+        return carID + ", "+ brand.brandID+ ", "+ color+ ", "+ frameID+", "+engineID;
     }
     
     public String screenString(){
-        return carID + ", "+ brand.brandID+ ", "+ color+ ", "+ frameID+", "+engineID;
+        return brand + "\n" + carID + "," + color + "," + frameID + "," + engineID;
     }
     
 }
