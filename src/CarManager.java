@@ -24,7 +24,6 @@ public class CarManager {
         mn.add("11- Save cars to file, named cars.txt");
         mn.add("12- Exits");
         cs.loadfile();
-        // hiển thị menu cho người dùng
         while (check) {
             for (String mnn : mn) {
                 System.out.println(mnn);
