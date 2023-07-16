@@ -235,7 +235,7 @@ public class CarList extends ArrayList<Car> {
         }
     }
      //List cars by partial brand name.
-    public void brandName(String partialBrandName) {
+    public void printBaseBrandName(String partialBrandName) {
         int count = 0;
         for (Car car : this) {
             if (car.getBrand().getBrandName().contains(partialBrandName)) {
