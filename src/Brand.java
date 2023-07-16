@@ -46,6 +46,12 @@ public class Brand {
     public void setPrice(double price) {
         this.price = price;
     }
+    
+     public void setUpdatedBrand (String brandName, String soundBrand, double price) {
+        this.brandName = brandName;
+        this.soundBrand = soundBrand;
+        this.price = price;
+    }
 
     @Override
     public String toString() {
