@@ -63,6 +63,7 @@ public class CarList extends ArrayList<Car> {
             }
             pw.close();
             fw.close();
+            System.out.println("Done!");
         } catch (Exception e) {
             System.out.println(e);
             return false;
@@ -113,6 +114,8 @@ public class CarList extends ArrayList<Car> {
                     duplicate = true;
                     System.out.println("This car ID is existed. Try another carID!");
                     break;
+                } else {
+                    duplicate = false;
                 }
             }
         } while (duplicate);
@@ -184,26 +187,15 @@ public class CarList extends ArrayList<Car> {
             return false;
         } else {
             String carID, color, frameID, engineID;
-            boolean duplicate = false;
-            do {
-                System.out.println("Input car ID: ");
-                carID = scanner.nextLine();
-                for (Car car : this) {
-                    if (car.getCarID().equals(carID)) {
-                        duplicate = true;
-                        System.out.println("This car ID is existed. Try another carID!");
-                        break;
-                    }
-                }
-            } while (duplicate);
+            carID = updateID;
             Brand brand = (Brand) menu.ref_getChoice(brandList);
             do {
-                System.out.println("Input color: ");
+                System.out.print("Input color: ");
                 color = scanner.nextLine();
-                if (color != null) {
+                if (color.equals("") != true) {
                     break;
                 }
-                System.out.println("The color must not be null. Try again!");
+                System.out.println("The color must not be null. Try again !");
             } while (true);
 
             do {
@@ -234,8 +226,8 @@ public class CarList extends ArrayList<Car> {
             System.out.println(car.screenString());
         }
     }
-     //List cars by partial brand name.
-    public void printBaseBrandName(String partialBrandName) {
+
+    public void brandName(String partialBrandName) {
         int count = 0;
         for (Car car : this) {
             if (car.getBrand().getBrandName().contains(partialBrandName)) {

@@ -1,5 +1,6 @@
 
 public class Brand {
+
     String brandID;
     String brandName;
     String soundBrand;
@@ -46,8 +47,8 @@ public class Brand {
     public void setPrice(double price) {
         this.price = price;
     }
-    
-     public void setUpdatedBrand (String brandName, String soundBrand, double price) {
+
+    public void setUpdatedBrand(String brandName, String soundBrand, double price) {
         this.brandName = brandName;
         this.soundBrand = soundBrand;
         this.price = price;
@@ -55,10 +56,7 @@ public class Brand {
 
     @Override
     public String toString() {
-        return  brandID + ", " + brandName + ", " + soundBrand + ": " + price ;
+        return brandID + ", " + brandName + ", " + soundBrand + ": " + price;
     }
-    
-    
+
 }
-
-

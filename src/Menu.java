@@ -20,7 +20,7 @@ public class Menu<E> {
 
         System.out.print("Please choose an option 1.." + N + ": ");
         response = scanner.nextInt();
-        scanner.nextLine(); // Clear the newline character from the input buffer
+        scanner.nextLine();
         return response;
     }
 

@@ -59,12 +59,12 @@ public class Car implements Comparable<Car> {
     }
 
     @Override
-    public int compareTo(Car c) {
-        int d = this.brand.brandName.compareTo(c.brand.brandName);
-        if (d != 0) {
-            return d;
+    public int compareTo(Car car) {
+        int val = this.getBrand().getBrandName().compareTo(car.getBrand().getBrandName());
+        if (val == 0) {
+            val = this.getCarID().compareTo(car.getCarID());
         }
-        return this.carID.compareTo(c.carID);
+        return val;
     }
 
     public String toString() {
