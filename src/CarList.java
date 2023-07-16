@@ -234,4 +234,17 @@ public class CarList extends ArrayList<Car> {
             System.out.println(car.screenString());
         }
     }
+     //List cars by partial brand name.
+    public void brandName(String partialBrandName) {
+        int count = 0;
+        for (Car car : this) {
+            if (car.getBrand().getBrandName().contains(partialBrandName)) {
+                System.out.println(car.screenString());
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.out.println("No result");
+        }
+    }
 }
