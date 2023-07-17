@@ -118,7 +118,7 @@ public class CarList extends ArrayList<Car> {
         do {
             System.out.println("Input color: ");
             color = scanner.nextLine();
-            if (color != null) {
+            if (color != null && !color.isEmpty()) {
                 break;
             }
             System.out.println("The color must not be null. Try again!");
