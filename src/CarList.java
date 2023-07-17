@@ -71,11 +71,6 @@ public class CarList extends ArrayList<Car> {
         return true;
     }
 
-    public Brand getUserChoice() {
-        Menu menu = new Menu<>();
-        return (Brand) menu.ref_getChoice(this);
-    }
-
     public int searchID(String carID) {
         for (int i = 0; i < this.size(); i++) {
             if (carID.equals(this.get(i).getCarID())) {
