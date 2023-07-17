@@ -67,7 +67,7 @@ public class CarManager {
                 case 7:
                     System.out.print("\nInput brand name: ");
                     String partBrandName = new Scanner(System.in).nextLine();
-                    carList.brandName(partBrandName);
+                    carList.printBaseBrandName(partBrandName);
                     System.out.println("\n");
                     break;
                 case 8:
